@@ -88,7 +88,7 @@ func NewCookie(name string, value string, age int64) *http.Cookie {
     } else {
         utctime = time.Unix(time.Now().Unix()+age, 0)
     }
-    return &http.Cookie{Name: name, Value: value, Expires: utctime}
+	return &http.Cookie{Name: name, Value: value, Expires: utctime, Path: "/"}
 }
 
 // GetBasicAuth is a helper method of *Context that returns the decoded
